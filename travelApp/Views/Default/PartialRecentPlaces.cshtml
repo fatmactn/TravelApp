@@ -1,0 +1,21 @@
+﻿@using travelApp.Models.Classes
+@model List<Blog>
+    <div class="con-bot">
+        @foreach (var x in Model)
+        {
+            <div class="left">
+                <div class="bot-left">
+                    <img src="@x.BlogImg" style="width: 300px; height: 144px;" alt="" />
+                </div>
+                <div class="left-text">
+                    <h4>@x.Title</h4>
+                    <span class="doller">@x.Date.ToString("dd-mm-yyyy")</span>
+                    <p>@x.Content.Substring(0,90)</p>
+                    <p><a href="/Blog/BlogDetail/@x.ID"><span class="read">Devamını oku >></span></a></p>
+                </div>
+            </div>
+        }
+        
+        @Html.Action("PartialRecentPlacesRight", "Default")
+        <div class="clear"></div>
+    </div>

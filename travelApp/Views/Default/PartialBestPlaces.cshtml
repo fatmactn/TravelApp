@@ -1,0 +1,20 @@
+﻿@using travelApp.Models.Classes
+@model List<Blog>
+    <div class="padding1">
+        <h4>En İyi Mekanlar</h4>
+    <div class="box-left">
+        @foreach (var x in Model)
+        {
+            
+                <div class="bot-img">
+                    <img src="@x.BlogImg" style="width: 120px; height: 70px;" alt="" />
+                </div>
+                <div class="bot-desc">
+                    <p>@x.Content.Substring(0, 72)</p>
+                </div>
+                <div class="clear"></div>
+            
+        }
+    </div>
+        @Html.Action("PartialBestPlacesRight", "Default")
+    </div>
